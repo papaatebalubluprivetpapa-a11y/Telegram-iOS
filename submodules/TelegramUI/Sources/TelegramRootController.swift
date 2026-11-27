@@ -221,6 +221,13 @@ public final class TelegramRootController: NavigationController, TelegramRootCon
             controllers.append(newsController)
         }
         controllers.append(chatListController)
+       
+        
+let aorusController = AorusSettingsController(context: self.context)
+aorusController.tabBarItem.title = "Aorus"
+aorusController.tabBarItem.image = UIImage(systemName: "star.fill")
+aorusController.tabBarItem.selectedImage = UIImage(systemName: "star.fill")
+controllers.append(aorusController)
         
         var restoreSettignsController: (ViewController & SettingsController)?
         if let sharedContext = self.context.sharedContext as? SharedAccountContextImpl {
